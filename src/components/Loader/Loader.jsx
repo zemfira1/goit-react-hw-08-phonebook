@@ -13,6 +13,12 @@ export const Loader = () => {
       wrapperClassName=""
       visible={true}
     />
+    // <FallingLines
+    //   color="#a7aea7"
+    //   width="100"
+    //   visible={true}
+    //   ariaLabel="falling-lines-loading"
+    // />
   );
 };
 

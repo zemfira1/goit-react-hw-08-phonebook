@@ -1,9 +1,8 @@
-//import { useEffect } from 'react';
 import { Contact, ButtonDelete } from './ContactItem.styled';
 import PropTypes from 'prop-types';
 import { FiPhone } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();

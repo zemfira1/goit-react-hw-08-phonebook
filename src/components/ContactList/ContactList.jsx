@@ -5,10 +5,10 @@ import {
   selectError,
   selectIsLoading,
   selectVisibleContacts,
-} from 'redux/selectors';
+} from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/contactsSlice';
 import { Loader } from 'components/Loader';
+import { fetchContacts } from 'redux/operations';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
