@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { theme } from 'styles/theme';
-import paperImg from '../images/paper.png';
+import bgHand from '../images/bgHand.png';
 
 export const GlobalStyles = css`
   html {
@@ -17,7 +17,7 @@ export const GlobalStyles = css`
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url(${paperImg});
+    background-image: url(${bgHand});
     background-repeat: no-repeat;
     background-size: cover;
   }

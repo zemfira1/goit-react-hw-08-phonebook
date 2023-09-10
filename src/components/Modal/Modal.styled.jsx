@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { theme } from 'styles';
-import modalBg from '../../images/modalBg.png';
+import bgHandModal from '../../images/bgHandModal.png';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -22,7 +22,7 @@ export const ModalArea = styled.div`
   border-radius: ${theme.spacing(1)};
   box-shadow: ${theme.shadows.small};
   background-color: azure;
-  background-image: url(${modalBg});
+  background-image: url(${bgHandModal});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -39,6 +39,7 @@ export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
     dispatch(updateContact({ id, name, number }));
 
     reset();
+    onClose();
   };
 
   const reset = () => {

@@ -53,7 +53,6 @@ export const updateContact = createAsyncThunk(
   async ({ id, name, number }, thunkApi) => {
     try {
       const { data } = await axios.patch(`/contacts/${id}`, { name, number });
-      setAuthHeader(data.token);
 
       return data;
     } catch (error) {
