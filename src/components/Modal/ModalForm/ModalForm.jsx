@@ -8,18 +8,13 @@ import {
   TitleEl,
 } from './ModalForm.styled';
 import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { updateContact } from 'redux/operations';
 
 export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
   const [name, setName] = useState(nameIt);
   const [number, setNumber] = useState(numberIt);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log(nameIt);
-    console.log(numberIt);
-  }, [nameIt, numberIt]);
 
   const inputChange = event => {
     const { name, value } = event.target;

@@ -35,14 +35,13 @@ export const ContactItem = ({ id, name, number }) => {
       <ContactTd3>
         <ButtonEl onClick={() => deleteThisContact(id)}>Delete</ButtonEl>
         <ButtonEl onClick={() => setOpen(true)}>Update</ButtonEl>
-        <Modal
-          open={open}
-          onClose={() => setOpen(false)}
-          id={id}
-          nameIt={name}
-          numberIt={number}
-        >
-          <ModalForm id={id} nameIt={name} numberIt={number} />
+        <Modal open={open} onClose={() => setOpen(false)}>
+          <ModalForm
+            id={id}
+            nameIt={name}
+            numberIt={number}
+            onClose={() => setOpen(false)}
+          />
         </Modal>
       </ContactTd3>
     </ContactTr>
