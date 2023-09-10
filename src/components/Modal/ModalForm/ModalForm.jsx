@@ -36,12 +36,7 @@ export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
   const dataSubmit = event => {
     event.preventDefault();
 
-    dispatch(
-      updateContact(id, {
-        name,
-        number,
-      })
-    );
+    dispatch(updateContact({ id, name, number }));
 
     reset();
   };
