@@ -8,13 +8,14 @@ const modalRootElement = document.querySelector('#modal');
 //console.log(modalRootElement);
 
 export const Modal = props => {
-  const { id, open, onClose } = props;
+  const { id, open, onClose, nameIt, numberIt } = props;
   const element = useMemo(() => document.createElement('div'), []);
 
   useEffect(() => {
     if (open) {
       modalRootElement.appendChild(element);
       window.addEventListener('keydown', keyDown);
+      console.log(nameIt);
 
       return () => {
         modalRootElement.removeChild(element);
@@ -40,7 +41,12 @@ export const Modal = props => {
     return createPortal(
       <Wrapper onClick={handleCheck}>
         <ModalArea className={css.modalBg}>
-          <ModalForm onClose={onClose} id={id} />
+          <ModalForm
+            onClose={onClose}
+            id={id}
+            nameIt={nameIt}
+            numberIt={numberIt}
+          />
         </ModalArea>
       </Wrapper>,
       element
