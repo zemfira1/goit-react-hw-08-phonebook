@@ -45,7 +45,16 @@ const contactsListSlice = createSlice({
         state.contacts.error = action.payload;
       })
       .addCase(updateContact.fulfilled, (state, action) => {
-        state.contacts.items = [...state.contacts.items, action.payload];
+        // state.contacts.items = state.contacts.items.map(contact => {
+        //   if ((contact.id = action.payload.id)) {
+        //     return [...state.contacts.items, action.payload];
+        //   }
+        //   return state.contacts.items;
+        // });
+        const index = state.contacts.items.findIndex(
+          contact => contact.id === action.payload.id
+        );
+        state.contacts.items.splice(index, 1, action.payload);
       }),
 });
 

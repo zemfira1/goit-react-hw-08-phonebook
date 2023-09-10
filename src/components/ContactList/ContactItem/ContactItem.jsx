@@ -11,6 +11,7 @@ import { AiOutlineLine } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { useState } from 'react';
+import { ModalForm } from 'components/Modal/ModalForm';
 
 export const ContactItem = ({ id, name, number }) => {
   const [open, setOpen] = useState(false);
@@ -35,12 +36,14 @@ export const ContactItem = ({ id, name, number }) => {
         <ButtonEl onClick={() => deleteThisContact(id)}>Delete</ButtonEl>
         <ButtonEl onClick={() => setOpen(true)}>Update</ButtonEl>
         <Modal
+          open={open}
+          onClose={() => setOpen(false)}
           id={id}
           nameIt={name}
           numberIt={number}
-          open={open}
-          onClose={() => setOpen(false)}
-        />
+        >
+          <ModalForm id={id} nameIt={name} numberIt={number} />
+        </Modal>
       </ContactTd3>
     </ContactTr>
   );

@@ -12,13 +12,13 @@ import { useEffect, useState } from 'react';
 import { updateContact } from 'redux/operations';
 
 export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [name, setName] = useState(nameIt);
+  const [number, setNumber] = useState(numberIt);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setName(nameIt);
-    setNumber(numberIt);
+    console.log(nameIt);
+    console.log(numberIt);
   }, [nameIt, numberIt]);
 
   const inputChange = event => {
@@ -42,9 +42,9 @@ export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
     event.preventDefault();
 
     dispatch(
-      updateContact({
-        name: name,
-        number: number,
+      updateContact(id, {
+        name,
+        number,
       })
     );
 

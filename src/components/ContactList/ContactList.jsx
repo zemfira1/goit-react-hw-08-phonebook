@@ -25,9 +25,11 @@ export const ContactList = () => {
       {isLoading && <Loader />}
       {filteredContacts.length > 0 && (
         <List>
-          {filteredContacts.map(({ id, name, number }) => (
-            <ContactItem key={id} name={name} number={number} id={id} />
-          ))}
+          <tbody>
+            {filteredContacts.map(({ id, name, number }) => (
+              <ContactItem key={id} name={name} number={number} id={id} />
+            ))}
+          </tbody>
         </List>
       )}
       {error && alert('Sorry, something is wrong!')}

@@ -2,13 +2,13 @@ import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { ModalArea, Wrapper } from './Modal.styled';
 import { ModalForm } from 'components/Modal/ModalForm';
-import css from './Modal.module.css';
+//import css from './Modal.module.css';
 
 const modalRootElement = document.querySelector('#modal');
 //console.log(modalRootElement);
 
 export const Modal = props => {
-  const { id, open, onClose, nameIt, numberIt } = props;
+  const { open, onClose, id, nameIt, numberIt } = props;
   const element = useMemo(() => document.createElement('div'), []);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export const Modal = props => {
   if (open) {
     return createPortal(
       <Wrapper onClick={handleCheck}>
-        <ModalArea className={css.modalBg}>
+        <ModalArea>
           <ModalForm
             onClose={onClose}
             id={id}
