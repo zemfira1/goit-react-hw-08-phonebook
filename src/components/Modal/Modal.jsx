@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { ModalArea, Wrapper } from './Modal.styled';
-import { ModalForm } from 'components/ModalForm';
+import { ModalForm } from 'components/Modal/ModalForm';
 import css from './Modal.module.css';
 
 const modalRootElement = document.querySelector('#modal');
@@ -15,7 +15,6 @@ export const Modal = props => {
     if (open) {
       modalRootElement.appendChild(element);
       window.addEventListener('keydown', keyDown);
-      console.log(nameIt);
 
       return () => {
         modalRootElement.removeChild(element);
