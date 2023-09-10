@@ -68,7 +68,7 @@ export const LoginForm = () => {
           required
         />
       </Label>
-      <Button type="submit">Signup</Button>
+      <Button type="submit">Login</Button>
     </FormEl>
   );
 };

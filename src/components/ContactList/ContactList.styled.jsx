@@ -1,12 +1,7 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { theme } from 'styles';
 
-export const List = styled.ul`
-  padding-left:50px;
-`;
-
-export const ButtonDelete = styled.button`
-    width: 80px;
-    border: 1px solid grey;
-    border-radius: 4px;
-    background-color: inherit;
+export const List = styled.table`
+  padding: ${theme.spacing(5)};
+  padding-top: ${theme.spacing(2)};
 `;

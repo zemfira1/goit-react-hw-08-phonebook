@@ -1,32 +1,28 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { theme } from 'styles';
 
 export const FormEl = styled.form`
-    width: 350px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    gap: 30px;
-    border: 2px solid black;
-    margin-bottom: 25px;
+  width: ${theme.spacing(88)};
+  padding: ${theme.spacing(5)};
+  padding-top: 0;
+  display: flex;
+  gap: ${theme.spacing(7)};
+  align-items: last baseline;
+  margin-bottom: ${theme.spacing(6)};
 `;
 
 export const Label = styled.label`
-    display: block;
-    font-size: 20px;
+  display: block;
+  font-size: ${theme.fontSizes.medium};
 `;
 
 export const Input = styled.input`
-    display: block;  
-    margin-top: 10px;
-    border: 1px solid grey;
-    border-radius: 4px;
-    height:20px;
+  margin-top: ${theme.spacing(2)};
+  height: ${theme.spacing(7)};
+  width: ${theme.spacing(55)};
 `;
 
 export const Button = styled.button`
-    width: 100px;
-    border: 1px solid grey;
-    border-radius: 4px;
-    background-color: inherit;
+  min-width: ${theme.spacing(38)};
+  height: ${theme.spacing(9)};
 `;

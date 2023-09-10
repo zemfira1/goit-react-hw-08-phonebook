@@ -1,3 +1,5 @@
+import { Text } from './Update.styled';
+
 export const Update = () => {
-  return <div>Data is being updated</div>;
+  return <Text>Data is being updated...</Text>;
 };

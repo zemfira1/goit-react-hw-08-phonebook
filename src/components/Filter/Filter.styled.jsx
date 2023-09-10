@@ -1,10 +1,14 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { theme } from 'styles';
 
 export const FilterZone = styled.label`
-  display: block; 
-  margin-bottom:10px; 
+  display: block;
+  margin-bottom: ${theme.spacing(8)};
+  margin-left: ${theme.spacing(6)};
 `;
 
 export const Input = styled.input`
-    display: block; 
+  height: ${theme.spacing(7)};
+  width: ${theme.spacing(55)};
+  margin-top: ${theme.spacing(2)};
 `;

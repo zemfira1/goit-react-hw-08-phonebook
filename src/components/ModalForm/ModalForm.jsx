@@ -1,5 +1,12 @@
 import { FiXCircle } from 'react-icons/fi';
-import { Button, CloseIcon, FormEl, Input, Label } from './ModalForm.styled';
+import {
+  Button,
+  CloseIcon,
+  FormEl,
+  Input,
+  Label,
+  TitleEl,
+} from './ModalForm.styled';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { updateContact } from 'redux/operations';
@@ -47,8 +54,9 @@ export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
   return (
     <>
       <CloseIcon>
-        <FiXCircle onClick={onClose} />
+        <FiXCircle size={30} color="#424442" onClick={onClose} />
       </CloseIcon>
+      <TitleEl>Change contact details</TitleEl>
       <FormEl onSubmit={dataSubmit}>
         <Label>
           {' '}
@@ -56,7 +64,7 @@ export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
           <Input
             type="text"
             name="name"
-            value={nameIt}
+            value={name}
             onChange={inputChange}
             pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -69,7 +77,7 @@ export const ModalForm = ({ onClose, id, nameIt, numberIt }) => {
           <Input
             type="tel"
             name="number"
-            value={numberIt}
+            value={number}
             onChange={inputChange}
             pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"

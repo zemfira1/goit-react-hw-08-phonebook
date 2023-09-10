@@ -1,5 +1,5 @@
 import { useAuth } from 'hooks';
-import { UserCont } from './UserMenu.styled';
+import { LogoutBtn, UserCont } from './UserMenu.styled';
 import { useDispatch } from 'react-redux';
 import { logout } from 'redux/operations';
 
@@ -11,9 +11,9 @@ const UserMenu = () => {
   return (
     <UserCont>
       <p>{email}</p>
-      <button type="button" onClick={() => dispatch(logout())}>
+      <LogoutBtn type="button" onClick={() => dispatch(logout())}>
         Logout
-      </button>
+      </LogoutBtn>
     </UserCont>
   );
 };

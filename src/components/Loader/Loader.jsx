@@ -4,21 +4,15 @@ import PropTypes from 'prop-types';
 export const Loader = () => {
   return (
     <ThreeDots
-      height="80"
-      width="80"
-      radius="9"
-      color="#5d5c5d"
+      height="60"
+      width="60"
+      radius="8"
+      color="#424442"
       ariaLabel="three-dots-loading"
       wrapperStyle={{}}
       wrapperClassName=""
       visible={true}
     />
-    // <FallingLines
-    //   color="#a7aea7"
-    //   width="100"
-    //   visible={true}
-    //   ariaLabel="falling-lines-loading"
-    // />
   );
 };
 

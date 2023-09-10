@@ -1,15 +1,20 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import { theme } from 'styles';
 
+export const Container = styled.section`
+  width: 1100px;
+  margin-inline: auto;
+`;
 export const Header = styled.header`
-  padding: 20px;
-  border-bottom: 2px solid #000;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.8),
-    0px 1px 10px 0px rgba(0, 0, 0, 0.8);
+  padding: ${theme.spacing(5)};
+  border-bottom: 1px solid ${theme.colors.black};
+  box-shadow: ${theme.shadows.headerBorder};
 `;
 
 export const Main = styled.main`
-  padding: 20px;
+  padding: ${theme.spacing(5)};
+  height: 100vh;
 `;
 
 export const Nav = styled.nav`
@@ -18,15 +23,18 @@ export const Nav = styled.nav`
 `;
 
 export const NavLinkEl = styled(NavLink)`
-  font-size: 28px;
-  color: inherit;
-  transition: color, 200ms;
+  text-decoration: none;
+  font-size: ${theme.fontSizes.xxxl};
+  font-weight: ${theme.fontWeight.normal};
+  margin-right: ${theme.spacing(12)};
+  transition: font-weight, 200ms;
 
   &.active {
-    color: #04b22a;
+    font-weight: ${theme.fontWeight.bold};
   }
 `;
-export const RegLog = styled.div`
+
+export const RegLogArea = styled.div`
   display: flex;
-  gap: 20px;
+  gap: ${theme.spacing(5)};
 `;

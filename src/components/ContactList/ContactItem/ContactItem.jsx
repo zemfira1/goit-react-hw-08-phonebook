@@ -1,7 +1,13 @@
 import { Modal } from 'components/Modal';
-import { Contact, ButtonDelete } from './ContactItem.styled';
+import {
+  ContactTr,
+  ContactTd1,
+  ContactTd2,
+  ContactTd3,
+  ButtonEl,
+} from './ContactItem.styled';
 import PropTypes from 'prop-types';
-import { FiPhone } from 'react-icons/fi';
+import { AiOutlineLine } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { useState } from 'react';
@@ -15,21 +21,28 @@ export const ContactItem = ({ id, name, number }) => {
   };
 
   return (
-    <Contact key={id}>
-      <FiPhone />
-      <p>
-        {name}: {number}
-      </p>
-      <ButtonDelete onClick={() => deleteThisContact(id)}>Delete</ButtonDelete>
-      <ButtonDelete onClick={() => setOpen(true)}>Update</ButtonDelete>
-      <Modal
-        id={id}
-        nameIt={name}
-        numberIt={number}
-        open={open}
-        onClose={() => setOpen(false)}
-      />
-    </Contact>
+    <ContactTr key={id}>
+      <ContactTd1>
+        <AiOutlineLine />
+      </ContactTd1>
+      <ContactTd2>
+        <p>{name}:</p>
+      </ContactTd2>
+      <ContactTd2>
+        <p>{number}</p>
+      </ContactTd2>
+      <ContactTd3>
+        <ButtonEl onClick={() => deleteThisContact(id)}>Delete</ButtonEl>
+        <ButtonEl onClick={() => setOpen(true)}>Update</ButtonEl>
+        <Modal
+          id={id}
+          nameIt={name}
+          numberIt={number}
+          open={open}
+          onClose={() => setOpen(false)}
+        />
+      </ContactTd3>
+    </ContactTr>
   );
 };
 

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { theme } from 'styles';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -7,7 +8,7 @@ export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
+  background: ${theme.colors.modalWrapper};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -15,8 +16,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ModalArea = styled.div`
-  background-color: white;
-  padding: 30px;
-  border: 1px solid black;
-  border-radius: 5px;
+  padding: ${theme.spacing(7)};
+  border: 1px solid ${theme.colors.greyDark};
+  border-radius: ${theme.spacing(1)};
+  box-shadow: ${theme.shadows.small};
 `;

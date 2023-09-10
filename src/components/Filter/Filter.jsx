@@ -13,7 +13,7 @@ export const Filter = () => {
 
   return (
     <FilterZone>
-      Find contacts by name
+      Find contact by name
       <Input type="text" value={filter} onChange={changeFilter} />
     </FilterZone>
   );

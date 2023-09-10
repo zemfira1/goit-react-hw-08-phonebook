@@ -6,7 +6,7 @@ import { Title } from 'components/Title';
 const Contacts = () => {
   return (
     <div>
-      <Title title="Phonebook" />
+      <Title title="Add new contact" />
       <ContactForm />
       <Title title="Contacts" />
       <Filter />

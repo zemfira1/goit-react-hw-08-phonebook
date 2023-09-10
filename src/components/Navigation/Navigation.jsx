@@ -1,5 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { Header, Main, Nav, NavLinkEl, RegLog } from './Navigation.styled';
+import {
+  Container,
+  Header,
+  Main,
+  Nav,
+  NavLinkEl,
+  RegLogArea,
+} from './Navigation.styled';
 import { Loader } from 'components/Loader';
 import { Suspense } from 'react';
 import UserMenu from 'components/UserMenu';
@@ -11,24 +18,28 @@ export const Navigation = () => {
   return (
     <>
       <Header>
-        <Nav>
-          {isLoggedIn && <NavLinkEl to="/contacts">Contacts</NavLinkEl>}
-          <RegLog>
-            {isLoggedIn ? (
-              <UserMenu />
-            ) : (
-              <div>
-                <NavLinkEl to="/register">Register</NavLinkEl>
-                <NavLinkEl to="/login">Login</NavLinkEl>
-              </div>
-            )}
-          </RegLog>
-        </Nav>
+        <Container>
+          <Nav>
+            {isLoggedIn && <NavLinkEl to="/contacts">Contacts</NavLinkEl>}
+            <RegLogArea>
+              {isLoggedIn ? (
+                <UserMenu />
+              ) : (
+                <div>
+                  <NavLinkEl to="/register">Register</NavLinkEl>
+                  <NavLinkEl to="/login">Login</NavLinkEl>
+                </div>
+              )}
+            </RegLogArea>
+          </Nav>
+        </Container>
       </Header>
       <Main>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
+        <Container>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </Container>
       </Main>
     </>
   );

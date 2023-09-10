@@ -1,17 +1,40 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { theme } from 'styles';
 
-export const Contact = styled.li`
-    font-size: 20px;
-    display:flex;
-    justify-content:flex-start;
-    gap: 30px;
-    align-items: center;
-    margin-bottom: 8px;
+export const ContactTr = styled.tr`
+  font-size: ${theme.fontSizes.large};
+  align-items: baseline;
 `;
 
-export const ButtonDelete = styled.button`
-    width: 80px;
-    border: 1px solid grey;
-    border-radius: 4px;
-    background-color: inherit;
+export const ContactTd1 = styled.td`
+  height: ${theme.spacing(10)};
+  width: ${theme.spacing(10)};
+`;
+
+export const ContactTd2 = styled.td`
+  height: ${theme.spacing(10)};
+  width: ${theme.spacing(55)};
+`;
+
+export const ContactTd3 = styled.td`
+  height: ${theme.spacing(10)};
+  width: ${theme.spacing(63)};
+  display: flex;
+  gap: ${theme.spacing(7)};
+`;
+
+export const ButtonEl = styled.button`
+  width: ${theme.spacing(25)};
+  height: ${theme.spacing(7)};
+  font-size: ${theme.fontSizes.small};
+  border: 1px solid ${theme.colors.greenDark};
+  border-radius: ${theme.spacing(1)};
+  background-color: inherit;
+  box-shadow: ${theme.shadows.small};
+  transition: box-shadow 150ms linear;
+
+  &:hover,
+  :focus {
+    box-shadow: ${theme.shadows.inHover};
+  }
 `;
